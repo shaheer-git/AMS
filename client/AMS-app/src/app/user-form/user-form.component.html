@@ -1,0 +1,76 @@
+<div class="container">
+    <app-alert-msg [data]="errorMsg"></app-alert-msg>
+    <div class="form-container">
+        <p class="title">Create new user</p>
+        <form class="form" (ngSubmit)="createUser()" #myForm="ngForm">
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="" autocomplete="off" ngModel required>
+            </div>
+            <div class="input-group">
+                <label for="empConCode">EMP/CON code</label>
+                <input type="text" name="empConCode" id="empConCode" placeholder="" autocomplete="off" ngModel required>
+            </div>
+            <div class="input-group">
+                <label for="department">Department</label>
+                <select name="department" id="department" ngModel required>
+                    <option value="Finance">Finance</option>
+                    <option value="Quality Assurance">Quality Assurance</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                    <option value="Human Resource">Human Resource</option>
+                    <option value="Administrative">Administrative</option>
+                    <option value="OnSite">On Site</option>
+                    <option value="Development">Development</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="shift">shift</label>
+
+                <div class="radio-con">
+                    <input type="radio" name="shift" value="Morning (07:30 AM)" ngModel required>
+                    <p>
+                        Morning (07:30 AM)
+                    </p>
+                </div>
+                <div class="radio-con">
+                    <input type="radio" name="shift" value="General 1 (09:30 AM)" ngModel required>
+                    <p>
+                        General 1 (09:30 AM)
+                    </p>
+                </div>
+                <div class="radio-con">
+                    <input type="radio" name="shift" value="General 2 (11:00 AM)" ngModel required>
+                    <p>
+                        General 2 (11:00 AM)
+                    </p>
+                </div>
+                <div class="radio-con">
+                    <input type="radio" name="shift" value="Evening (02:30 PM)" ngModel required>
+                    <p>
+                        Evening (02:30 PM)
+                    </p>
+                </div>
+                <div class="radio-con">
+                    <input type="radio" name="shift" value="Night (10:00 PM)" ngModel required>
+                    <p>
+                        Night (10:00 PM)
+                    </p>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="IDEAteam">IDEAteam, Only for Mumbai employee</label>
+                <div class="radio-con">
+                    <input type="radio" name="IDEAteam" value="Yes" ngModel required>
+                    <p>Yes</p>
+                </div>
+                <div class="radio-con">
+                    <input type="radio" name="IDEAteam" value="No" ngModel required>
+                    <p>No</p>
+                </div>
+            </div>
+            <div class="createBtnCon">
+                <button class="create" id="create">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

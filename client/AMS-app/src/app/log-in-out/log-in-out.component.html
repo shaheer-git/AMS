@@ -1,0 +1,46 @@
+<div class="container">
+    <!-- <app-alert-msg [data]="errorMsg"></app-alert-msg> -->
+    <div class="form-container">
+        <p class="title">Mark Attendance</p>
+        <form class="form" #myForm="ngForm" (ngSubmit)="markAttendance()">
+            <div class="input-group">
+                <label for="department">Department</label>
+                <select name="department" id="department" (change)="selectDept()" ngModel>
+                    <option value="Finance">Finance</option>
+                    <option value="Quality Assurance">Quality Assurance</option>
+                    <option value="Business Analyst">Business Analyst</option>
+                    <option value="Human Resource">Human Resource</option>
+                    <option value="Administrative">Administrative</option>
+                    <option value="OnSite">On Site</option>
+                    <option value="Development">Development</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label for="logInOutTime">Log In/Out</label>
+                <select name="logInOutTime" id="logInOutTime" (change)="selectLogInOutTime()" ngModel>
+                    <option value="LogIn">Log-In Time</option>
+                    <option value="LogOut">Log-Out Time</option>
+                </select>
+            </div>
+            <div class="input-group" [style]="displayStyle">
+                <label for="userName">Names</label>
+                <ul id="users-list">
+                    <div style="width: 100%; border: 2px solid;height: 10px;" ></div>
+                    <input type="text" placeholder="" autocomplete="off" required name="userName" id="userName" ngModel>
+                    <div *ngFor="let item of data">
+                        <li>
+                            {{ item.name }}
+                        </li>
+                    </div>
+                </ul>
+            </div>
+
+            <div class="createBtnCon">
+                <button class="create" id="create">Submit</button>
+            </div>
+            <div>Last Log-Out:{{outTime}} </div>
+            <div>Last Log-In: {{inTime}} </div>
+        </form>
+    </div>
+    <iframe src="" frameborder="0" id="loadGoogleForm" style="display: none;"></iframe>
+</div>
